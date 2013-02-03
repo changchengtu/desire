@@ -1,0 +1,21 @@
+all your goals</br>
+all you receive from who and how much</br>
+all you save to who and how much
+<%= @allGoal%>
+
+<div>
+  <table>
+          <thead>
+                  <tr>
+		    <th>name</th>
+		  </tr>
+          </thead>
+	   <tbody>
+                  <% @allGoal.each do |goal| -%>
+                          <tr>
+				<td><%=link_to goal.what, new_savemoney_path%></td>
+			  </tr>
+                  <% end-%>
+          </tbody>
+  </table>
+</div>

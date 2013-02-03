@@ -1,0 +1,2 @@
+module SavemoneyHelper
+end

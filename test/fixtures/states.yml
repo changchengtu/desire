@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fromWho: 1
+  toWho: 1
+  howMuch: 1
+  forWhat: 1
+  confirm: false
+
+two:
+  fromWho: 1
+  toWho: 1
+  howMuch: 1
+  forWhat: 1
+  confirm: false

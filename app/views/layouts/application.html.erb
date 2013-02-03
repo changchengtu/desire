@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desire</title>
+  	<%= stylesheet_link_tag    "application", :media => "all" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
+  	<p class="notice"><%= notice %></p>
+  	<p class="alert"><%= alert %></p>
+</head>
+<body>
+    <div id="back-bar">
+      <ul><font face="微軟正黑體">
+        <% if user_signed_in? %>
+          <li><%= link_to '登出', destroy_user_session_path, :method => 'delete'%></li>
+        <% else %>
+          <li><%= link_to '登入', new_user_session_path %></li>
+        <% end %>
+      </ul></font>
+    </div>
+
+<%= yield %>
+
+</body>
+</html>

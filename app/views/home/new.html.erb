@@ -1,0 +1,15 @@
+new a goal</br>
+
+  <%= form_tag '/home', :method=>nil  do %>
+
+        <%= label :goal, :what, '目標名稱'%>
+        <%= text_field :goal, :what, :value=>"啥東東"%>
+
+	<%= label :goal, :price, '目標價格'%>
+        <%= text_field :goal, :price, :value=>0%>
+
+	<%= label :goal, :user_id, 'id'%>
+        <%= text_field :goal, :user_id, :value=>current_user.id%>
+
+        <%= submit_tag '確定送出'%>
+  <% end%>
