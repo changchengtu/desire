@@ -1,2 +1,25 @@
-test index
+all your goals</br>
+<div>
+  <table>
+          <thead>
+                  <tr>
+                    <th>name</th><th>目前金額</th>
+                  </tr>
+          </thead>
+           <tbody>
+                  <% @allGoals.each do |goal| -%>
+                          <tr>
+                                <td><%=goal.what%></td>
+				<td><%=@separateGoalSum[goal.id]%></td>
+				<td><%=link_to "存錢", "home/saveMoney/"+goal.id.to_s%>
+                          </tr>
+                  <% end-%>
+          </tbody>
+  </table>
+</div>
+<div><%= link_to "新增目標", new_home_path%></div>
+</br>
 
+</br>
+</br>
+<%= @separateGoalSum%>

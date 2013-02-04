@@ -33,6 +33,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Token authenticatable
       # t.string :authentication_token
 
+      ##User information
+      t.string :name
+      t.string :phone 
 
       t.timestamps
     end
