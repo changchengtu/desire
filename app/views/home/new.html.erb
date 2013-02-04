@@ -8,8 +8,7 @@ new a goal</br>
 	<%= label :goal, :price, '目標價格'%>
         <%= text_field :goal, :price, :value=>0%>
 
-	<%= label :goal, :user_id, 'id'%>
-        <%= text_field :goal, :user_id, :value=>current_user.id%>
+        <%= hidden_field :goal, :user_id, :value=>current_user.id%>
 
         <%= submit_tag '確定送出'%>
   <% end%>
