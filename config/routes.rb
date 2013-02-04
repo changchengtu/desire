@@ -3,8 +3,9 @@ Desire::Application.routes.draw do
   devise_for :users
 
   root :to => "home#index"
+  get "home/saveMoney/:goal_id"=>"home#saveMoney"
+  post "home/save"=>"home#save"
   resources :home
-  resources :savemoney
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,20 +1,63 @@
-all your goals</br>
-all you receive from who and how much</br>
-all you save to who and how much
-<%= @allGoal%>
 
+all unconfirm</br>
 <div>
   <table>
           <thead>
                   <tr>
-		    <th>name</th>
-		  </tr>
+                    <th>誰給你</th>
+                    <th>多少</th>
+                  </tr>
           </thead>
-	   <tbody>
-                  <% @allGoal.each do |goal| -%>
+           <tbody>
+                  <% @allUnconfirm.each do |unconfirm| -%>
                           <tr>
-				<td><%=link_to goal.what, new_savemoney_path%></td>
-			  </tr>
+                                <td><%= @person[unconfirm.user_id]%></td>
+                                <td><%= unconfirm.howMuch%></td>
+				<td><%= link_to "confirm",home_path(unconfirm), :method=>:put%></td>
+                          </tr>
+                  <% end-%>
+          </tbody>
+  </table>
+</div>
+</br>
+
+all you save to who and how much
+</br>
+<div>
+  <table>
+          <thead>
+                  <tr>
+                    <th>存給誰</th>
+		    <th>多少</th>
+                  </tr>
+          </thead>
+           <tbody>
+                  <% @allSave.each do |save| -%>
+                          <tr>
+                                <td><%=@person[save.toWho]%></td>
+				<td><%=save.howMuch%></td>
+                          </tr>
+                  <% end-%>
+          </tbody>
+  </table>
+</div>
+</br>
+
+all you receive from who and how much</br>
+<div>
+  <table>
+          <thead>
+                  <tr>
+                    <th>誰的錢</th>
+                    <th>多少</th>
+                  </tr>
+          </thead>
+           <tbody>
+                  <% @allReceive.each do |receive| -%>
+                          <tr>
+                                <td><%=@person[receive.user_id]%></td>
+                                <td><%=receive.howMuch%></td>
+                          </tr>
                   <% end-%>
           </tbody>
   </table>
